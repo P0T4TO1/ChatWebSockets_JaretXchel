@@ -1,13 +1,13 @@
 {
-  "name": "webchat",
+  "name": "whatsapp2",
   "version": "1.0.0",
-  "description": "Proyecto de chat en Socket.io",
+  "description": "Ejercicio de un chat con Socket.io para Sistemas Distribuidos",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon src/index.js"
   },
-  "author": "Ameth Ordonez <amethgabriel@hotmail.com>",
+  "author": "García Gómez Jaret Xchel y Gómez Herrera Axel",
   "license": "MIT",
   "dependencies": {
     "cookie-parser": "^1.4.6",

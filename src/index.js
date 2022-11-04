@@ -2,7 +2,7 @@ const express = require("express");
 const { createServer } = require("http");
 const path = require("path");
 const cookieParser = require("cookie-parser");
-const realTimeServer = require("./realTimeServer.js");
+const realTimeServer = require("./server.js");
 
 const app = express();
 const httpServer = createServer(app);
