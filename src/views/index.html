@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/chat.css" />
+    <link rel="shortcut icon" href="/images/whatsapp2logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <title>Webchat socket</title>
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-dark navbar-expand-md py-3"
+      style="background: #0d1818"
+    >
+      <div class="container">
+        <img src="/images/whatsapp2logo.png" height="50" alt="image-nav" />
+        <a
+          class="navbar-brand d-flex align-items-center"
+          href="#"
+          style="height: 40px"
+        >
+          <span>&nbsp Whatsapp 2</span>
+        </a>
+        <div class="collapse navbar-collapse" id="navcol-5"></div>
+        <button type="button" class="btn btn-danger" id="logout">
+          <i class="fas fa-sign-out-alt"></i>
+          Salir
+        </button>
+      </div>
+    </nav>
+
+    <section style="background-color: #eee">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0">
+            <h5 class="font-weight-bold mb-3 text-center text-lg-start">
+              Member
+            </h5>
+
+            <div class="card">
+              <div class="card-body" style="position: relative;max-height: 600px;overflow-y: scroll;">
+                <ul class="list-unstyled mb-0" id="users-connected">
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-7 col-xl-8">
+            <div class="container py-5">
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-12">
+                  <div class="card" id="chat2">
+                    <div
+                      class="card-header d-flex justify-content-between align-items-center p-3"
+                    >
+                      <h5 class="mb-0">Chat</h5>
+                    </div>
+                    <div
+                      class="card-body"
+                      style="
+                        position: relative;
+                        height: 400px;
+                        overflow-y: scroll;
+                      "
+                    >
+                      <div class="d-flex flex-row justify-content-start">
+                        <div id="all-messages"></div>
+                      </div>
+                    </div>
+                    <div
+                      class="card-footer text-muted d-flex justify-content-start align-items-center p-3"
+                    >
+                      <input
+                        type="text"
+                        class="form-control form-control-lg"
+                        id="message"
+                        name="message"
+                        placeholder="Escribe un mensaje"
+                      />
+                      <button
+                        id="send-message"
+                        class="btn btn-outline-danger"
+                        href="#!"
+                      >
+                        <i class="fas fa-paper-plane"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center py-4" style="background: #0d1818">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-lg-3 justify-content-between">
+          <div class="col">
+            <p class="text-light my-2">Whatsapp 2</p>
+          </div>
+          <div class="col">
+            <p class="text-light my-2">
+              García Gómez Jaret Xchel y Gómez Herrera Axel 5IV7
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"
+    ></script>
+    <script src="/js/logout.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
