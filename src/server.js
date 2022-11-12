@@ -16,10 +16,14 @@ module.exports = (httpServer) => {
     });
 
     socket.on("message", ({ user, message }) => {
-      io.emit("message", {
-        user: username,
+      socket.broadcast.emit("otherMessage", {
+        user: user,
         message,
       });
+      socket.emit("myMessage", {
+        user: user,
+        message,
+        });
     });
 
     socket.on('disconnect', () => {

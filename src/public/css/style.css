@@ -122,6 +122,8 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 50px;
+  align-items: flex-start;
 }
 
 .image-container img {

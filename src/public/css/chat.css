@@ -11,11 +11,6 @@
   margin-bottom: 20px;
 }
 
-.message .image-container {
-  width: 50px;
-  align-items: flex-start;
-}
-
 .message .message-body {
   margin-left: 10px;
   width: calc(100% - 50px);

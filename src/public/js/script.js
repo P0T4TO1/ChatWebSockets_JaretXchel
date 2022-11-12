@@ -2,6 +2,8 @@ const socket = io();
 
 const btnSend = document.getElementById("send-message");
 const allMessages = document.getElementById("all-messages");
+const myMessages = document.getElementById("my-messages");
+const otherMessages = document.getElementById("other-messages");
 const messageText = document.getElementById("message");
 const usersList = document.getElementById("users-connected");
 
@@ -32,7 +34,31 @@ messageText.addEventListener("keypress", (e) => {
   }
 });
 
-socket.on("message", (data) => {
+//show the others messages
+socket.on("otherMessage", (data) => {
+    const {user, message} = data;
+    const date = new Date();
+    const hour = date.getHours();
+    const minutes = date.getMinutes();
+    const time = `${hour}:${minutes}`;
+    const msg = document.createRange()
+        .createContextualFragment(`<div class="your-message d-flex">
+            <div class="image-container me-2">
+                <img src="/images/profile.png" alt="">
+            </div>
+            <div class="message-body">
+                <div class="user-info">
+                    <span class="username fw-semibold">${user}</span>
+                    <span class="time">${time}</span>
+                </div>
+                <p>${message}</p>
+            </div>
+        </div>`);
+
+    allMessages.append(msg);
+});
+
+socket.on("myMessage", (data) => {
   const { user, message } = data;
   //obtener la hora actual
   const date = new Date();
@@ -41,16 +67,16 @@ socket.on("message", (data) => {
   const time = `${hour}:${minutes}`;
 
   const msg = document.createRange()
-    .createContextualFragment(`<div class="message">
-            <div class="image-container">
-                <img src="/images/profile.jpg" alt="">
-            </div>
+    .createContextualFragment(`<div class="my-message d-flex justify-content-end">
             <div class="message-body">
                 <div class="user-info">
-                    <span class="username">${user}</span>
                     <span class="time">${time}</span>
+                    <span class="username fw-semibold">${user}</span>
                 </div>
-                <p>${message}</p>
+                <p style="text-align: end">${message}</p>
+            </div>
+            <div class="image-container ms-2">
+                <img src="/images/profile.png" alt="">
             </div>
         </div>`);
 

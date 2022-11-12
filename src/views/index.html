@@ -14,10 +14,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css"
-      rel="stylesheet"
-    />
+      <link href="/assets/fonts/font-awesome.min.css">
+      <link rel="stylesheet" href="/assets/bootstrap/css/mdb.min.css" />
     <title>Webchat socket</title>
   </head>
 
@@ -70,15 +68,15 @@
                       <h5 class="mb-0">Chat</h5>
                     </div>
                     <div
-                      class="card-body"
+                      class="card-body position-relative overflow-y-scroll"
                       style="
                         position: relative;
                         height: 400px;
                         overflow-y: scroll;
                       "
                     >
-                      <div class="d-flex flex-row justify-content-start">
-                        <div id="all-messages"></div>
+                      <div class="d-flex flex-row">
+                        <div id="all-messages" class="w-100"></div>
                       </div>
                     </div>
                     <div
@@ -96,7 +94,7 @@
                         class="btn btn-outline-danger"
                         href="#!"
                       >
-                        <i class="fas fa-paper-plane"></i>
+                        <i class="fa fa-paper-plane"></i>
                       </button>
                     </div>
                   </div>
@@ -123,11 +121,7 @@
       </div>
     </footer>
 
-    <!-- MDB -->
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"
-    ></script>
+    <script src="/assets/bootstrap/js/mdb.min.js"></script>
     <script src="/js/logout.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/script.js"></script>
